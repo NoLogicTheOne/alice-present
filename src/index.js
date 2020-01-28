@@ -1,18 +1,17 @@
-module.exports.handler = async (event, context) => {
-    const {version, session, request} = event;
-    const ttsText = tts => ({
-        text: tts.replace(/\+/g, ""),
-        tts
-    })
+const greeting = require('./greeting').default
 
-    let text = 'Меня зовут Оксана, я помогу Вам с выбором под+арка. Ком+у будем дарить?';
-  
-    return{
+const realFunction = (event, context) => {
+    const {version, session, request} = event;
+
+    return {
         version,
         session,
-        response: {
-            ...ttsText(text),
-            end_session: false      
-        }
-    } 
+        response: greeting()
+    }
+}
+
+module.exports.handler = async (event, context) => {
+    return realFunction(event, context)
 };
+
+module.exports.testing = realFunction
