@@ -1,0 +1,17 @@
+{
+    "name": "present-skill",
+    "description": "Present skill",
+    "version": "0.0.1",
+    "private": false,
+    "license": "MIT",
+    "author": "NoLogicTheOne",
+    "engines": {
+        "node": ">=6.9.1"
+    },
+    "scripts": {
+        "start": "node index.js"
+    },
+    "dependencies": {
+        "alice-renderer": "^0.8.0"
+    }
+}

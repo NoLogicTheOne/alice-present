@@ -1,4 +1,4 @@
-const greeting = require('./greeting').default
+const greeting = require('./greeting')
 
 const realFunction = (event, context) => {
     const {version, session, request} = event;
